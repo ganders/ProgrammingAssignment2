@@ -7,8 +7,8 @@
 # matrix
 makeCacheMatrix <- function(x=matrix()) {
   
-  cached_solved_matrix <- NULL 
-  original_matrix <- matrix 
+  cached_solved_matrix <<- NULL 
+  original_matrix <<- matrix 
   
   ## To me it makes the most sense to create and cache the solved matrix here.
   ## When set, if the given matrix isn't equal to the existing matrix
@@ -18,7 +18,7 @@ makeCacheMatrix <- function(x=matrix()) {
     # sanity check
     matrix = as.matrix(matrix)
     
-    if (!identical(matrix,original_matrix) || is.null(cached_solved_matrix)) {
+    if (!identical(matrix, original_matrix) || is.null(cached_solved_matrix)) {
       set_solved_matrix(cacheSolve(matrix))
       original_matrix <<- matrix  
     }
